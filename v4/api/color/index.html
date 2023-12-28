@@ -1,0 +1,679 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A custom open-source game engine on Python and Pygame, it’s written in pure Python! It’s easy and fast!">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/logo/fe.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Color API - Fusion Engine Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#color-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Fusion Engine Documentation" class="md-header__button md-logo" aria-label="Fusion Engine Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo/fe.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fusion Engine Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Color API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dimkauzh/fusion-engine" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dimkauzh/fusion-engine
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../wiki/" class="md-tabs__link">
+        
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Api
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/" class="md-tabs__link">
+        
+  
+    
+  
+  Tutorial
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Fusion Engine Documentation" class="md-nav__button md-logo" aria-label="Fusion Engine Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo/fe.png" alt="logo">
+
+    </a>
+    Fusion Engine Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dimkauzh/fusion-engine" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dimkauzh/fusion-engine
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color tools
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="color-api">Color API</h1>
+<h2 id="color">Color</h2>
+<pre><code class="language-python">ALICEBLUE = (240, 248, 255, 255)
+ANTIQUEWHITE = (250, 235, 215, 255)
+AQUA = (0, 255, 255, 255)
+AQUAMARINE = (127, 255, 212, 255)
+AZURE = (240, 255, 255, 255)
+BEIGE = (245, 245, 220, 255)
+BISQUE = (255, 228, 196, 255)
+BLACK = (0, 0, 0, 255)
+BLANCHEDALMOND = (255, 235, 205, 255)
+BLUE = (0, 0, 255, 255)
+BLUEVIOLET = (138, 43, 226, 255)
+BROWN = (165, 42, 42, 255)
+BURLYWOOD = (222, 184, 135, 255)
+CADETBLUE = (95, 158, 160, 255)
+CHARTREUSE = (127, 255, 0, 255)
+CHOCOLATE = (210, 105, 30, 255)
+CORAL = (255, 127, 80, 255)
+CORNFLOWERBLUE = (100, 149, 237, 255)
+CORNSILK = (255, 248, 220, 255)
+CRIMSON = (220, 20, 60, 255)
+CYAN = (0, 255, 255, 255)
+DARKBLUE = (0, 0, 139, 255)
+DARKCYAN = (0, 139, 139, 255)
+DARKGOLDENROD = (184, 134, 11, 255)
+DARKGRAY = (169, 169, 169, 255)
+DARKGREEN = (0, 100, 0, 255)
+DARKKHAKI = (189, 183, 107, 255)
+DARKMAGENTA = (139, 0, 139, 255)
+DARKOLIVEGREEN = (85, 107, 47, 255)
+DARKORANGE = (255, 140, 0, 255)
+DARKORCHID = (153, 50, 204, 255)
+DARKRED = (139, 0, 0, 255)
+DARKSALMON = (233, 150, 122, 255)
+DARKSEAGREEN = (143, 188, 143, 255)
+DARKSLATEBLUE = (72, 61, 139, 255)
+DARKSLATEGRAY = (47, 79, 79, 255)
+DARKTURQUOISE = (0, 206, 209, 255)
+DARKVIOLET = (148, 0, 211, 255)
+DEEPPINK = (255, 20, 147, 255)
+DEEPSKYBLUE = (0, 191, 255, 255)
+DIMGRAY = (105, 105, 105, 255)
+DODGERBLUE = (30, 144, 255, 255)
+FIREBRICK = (178, 34, 34, 255)
+FLORALWHITE = (255, 250, 240, 255)
+FORESTGREEN = (34, 139, 34, 255)
+FUCHSIA = (255, 0, 255, 255)
+GAINSBORO = (220, 220, 220, 255)
+GHOSTWHITE = (248, 248, 255, 255)
+GOLD = (255, 215, 0, 255)
+GOLDENROD = (218, 165, 32, 255)
+GRAY = (128, 128, 128, 255)
+GREEN = (0, 128, 0, 255)
+GREENYELLOW = (173, 255, 47, 255)
+HONEYDEW = (240, 255, 240, 255)
+HOTPINK = (255, 105, 180, 255)
+INDIANRED = (205, 92, 92, 255)
+INDIGO = (75, 0, 130, 255)
+IVORY = (255, 255, 240, 255)
+KHAKI = (240, 230, 140, 255)
+LAVENDER = (230, 230, 250, 255)
+LAVENDERBLUSH = (255, 240, 245, 255)
+LAWNGREEN = (124, 252, 0, 255)
+LEMONCHIFFON = (255, 250, 205, 255)
+LIGHTBLUE = (173, 216, 230, 255)
+LIGHTCORAL = (240, 128, 128, 255)
+LIGHTCYAN = (224, 255, 255, 255)
+LIGHTGOLDENRODYELLOW = (250, 250, 210, 255)
+LIGHTGRAY = (211, 211, 211, 255)
+LIGHTGREEN = (144, 238, 144, 255)
+LIGHTSALMON = (255, 182, 193, 255)
+LIGHTSEAGREEN = (32, 178, 170, 255)
+LIGHTSKYBLUE = (135, 206, 250, 255)
+LIGHTSLATEGRAY = (119, 136, 153, 255)
+LIGHTSTEELBLUE = (176, 196, 222, 255)
+LIGHTYELLOW = (255, 255, 224, 255)
+LIME = (0, 255, 0, 255)
+LIMEGREEN = (50, 205, 50, 255)
+LINEN = (250, 240, 230, 255)
+MAGENTA = (255, 0, 255, 255)
+MAROON = (128, 0, 0, 255)
+MEDIUMAQUAMARINE = (102, 205, 170, 255)
+MEDIUMBLUE = (0, 0, 205, 255)
+MEDIUMORCHID = (186, 85, 211, 255)
+MEDIUMPURPLE = (147, 112, 219, 255)
+MEDIUMSEAGREEN = (60, 179, 113, 255)
+MEDIUMSLATEBLUE = (123, 104, 238, 255)
+MEDIUMSPRINGGREEN = (0, 250, 154, 255)
+MEDIUMTURQUOISE = (72, 209, 204, 255)
+MEDIUMVIOLETRED = (199, 21, 133, 255)
+MIDNIGHTBLUE = (25, 25, 112, 255)
+MINTCREAM = (245, 255, 250, 255)
+MISTYROSE = (255, 228, 225, 255)
+MOCCASIN = (255, 228, 181, 255)
+NAVAJOWHITE = (255, 222, 173, 255)
+NAVY = (0, 0, 128, 255)
+OLDLACE = (253, 245, 230, 255)
+OLIVE = (128, 128, 0, 255)
+OLIVEDRAB = (107, 142, 35, 255)
+ORANGE = (255, 165, 0, 255)
+ORANGERED = (255, 69, 0, 255)
+ORCHID = (218, 112, 214, 255)
+PALEGOLDENROD = (238, 232, 170, 255)
+PALEGREEN = (152, 251, 152, 255)
+PALETURQUOISE = (175, 238, 238, 255)
+PALEVIOLETRED = (219, 112, 147, 255)
+PAPAYAWHIP = (255, 239, 213, 255)
+PEACHPUFF = (255, 218, 185, 255)
+PERU = (205, 133, 63, 255)
+PINK = (255, 192, 203, 255)
+PLUM = (221, 160, 221, 255)
+POWDERBLUE = (176, 224, 230, 255)
+PURPLE = (128, 0, 128, 255)
+REBECCAPURPLE = (102, 51, 153, 255)
+RED = (255, 0, 0, 255)
+ROSYBROWN = (188, 143, 143, 255)
+ROYALBLUE = (65, 105, 225, 255)
+SADDLEBROWN = (139, 69, 19, 255)
+SALMON = (250, 128, 114, 255)
+SANDYBROWN = (244, 164, 96, 255)
+SEAGREEN = (46, 139, 87, 255)
+SEASHELL = (255, 245, 238, 255)
+SIENNA = (160, 82, 45, 255)
+SILVER = (192, 192, 192, 255)
+SKYBLUE = (135, 206, 235, 255)
+SLATEBLUE = (106, 90, 205, 255)
+SLATEGRAY = (112, 128, 144, 255)
+SNOW = (255, 250, 250, 255)
+SPRINGGREEN = (0, 255, 127, 255)
+STEELBLUE = (70, 130, 180, 255)
+TAN = (210, 180, 140, 255)
+TEAL = (0, 128, 128, 255)
+THISTLE = (216, 191, 216, 255)
+TOMATO = (255, 99, 71, 255)
+TURQUOISE = (64, 224, 208, 255)
+VIOLET = (238, 130, 238, 255)
+WHEAT = (245, 222, 179, 255)
+WHITE = (255, 255, 255, 255)
+WHITESMOKE = (245, 245, 245, 255)
+YELLOW = (255, 255, 0, 255)
+YELLOWGREEN = (154, 205, 50, 255)
+</code></pre>
+<h2 id="color-tools">Color tools</h2>
+<pre><code class="language-python">hex_to_rgba(hex)
+hsv_to_rgb(hue, sat, val, alpha: int) -&gt; tuple[int, int, int, int]
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
